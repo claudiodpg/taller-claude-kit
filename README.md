@@ -17,7 +17,7 @@ mayor: solo trae las piezas que se usan en el taller. Cópialo a tu repo, úsalo
 | `security-baseline` | skill | Revisa OWASP básico (permiso/IDOR, inyección, secretos) |
 | `/verificar` | command | Corre build → tipos → lint → tests y te da evidencia |
 | `/optimizar-memoria` | command | Poda/fusiona `CLAUDE.md` y `memory/` |
-| `/sistema-diseno` | command | Le pasas una URL → extraes tokens ricos (escalas, pesos, escala tipográfica, espaciado, sombras); un **script determinista** genera `tokens.css` + `brandbook.html` con tipografías embebidas y contraste WCAG, **auto-versionado** en `design/<slug>/vN/` (rápido, pocos tokens) |
+| `/sistema-diseno` | command | Le pasas una URL → extraes tokens ricos (escalas, pesos, escala tipográfica, espaciado, sombras) y los **pares de contraste reales** (fg/bg del sitio); un **script determinista** genera `tokens.css` + `brandbook.html` con tipografías **embebidas en base64** (autocontenido, offline) y contraste WCAG **del uso real** ("pares que fallan AA: N", no falso verde), marca **propuesto vs observado**, **auto-versionado** en `design/<slug>/vN/` (rápido, pocos tokens) |
 | `revisor` | subagente | Audita en contexto fresco (Builder ≠ Auditor) |
 | `no-cerrar-sin-pruebas` | hook (Stop) | Bloquea cerrar si las pruebas no pasan |
 
