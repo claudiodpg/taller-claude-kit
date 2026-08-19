@@ -1,6 +1,6 @@
 ---
 name: arquitectura
-description: Propone la arquitectura y el modelo de datos de un proyecto o módulo (capas, fronteras, dónde vive la lógica) para que el desarrollador la evalúe, y registra la decisión. Úsala al iniciar la construcción, al definir estructura de carpetas/capas o el esquema de datos, o cuando el usuario pida "arquitectura", "modelar datos" o "cómo estructurar".
+description: Propone la arquitectura y el modelo de datos de un proyecto o módulo (capas, fronteras, dónde vive la lógica de negocio) para que el desarrollador la evalúe, y registra la decisión. Úsala al iniciar la construcción tras especificar, al definir estructura de carpetas/capas o el esquema de datos, o cuando el usuario pida "arquitectura", "modelar datos", "diseñar el esquema" o "cómo estructurar el proyecto".
 ---
 
 # Arquitectura

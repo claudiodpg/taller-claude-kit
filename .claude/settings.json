@@ -1,12 +1,12 @@
 {
-  "$comment": "Hook 'no-cerrar-sin-pruebas': al intentar cerrar (Stop), corre las pruebas; si fallan, bloquea. El formato de hooks puede variar entre versiones de Claude Code — ver ../CLAUDE-TECH-ACCURACY.md y ajusta si es necesario.",
+  "$comment": "Hook 'no-cerrar-sin-pruebas': al intentar cerrar (Stop), corre las pruebas; si fallan, bloquea. Usa Node (invariante de plataforma: corre igual en Windows con cmd/PowerShell y en Mac/Linux). El formato de hooks puede variar entre versiones de Claude Code — ver ../CLAUDE-TECH-ACCURACY.md y ajusta si es necesario.",
   "hooks": {
     "Stop": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/hooks/no-cerrar-sin-pruebas.sh"
+            "command": "node .claude/hooks/no-cerrar-sin-pruebas.mjs"
           }
         ]
       }

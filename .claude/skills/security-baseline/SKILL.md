@@ -1,6 +1,6 @@
 ---
 name: security-baseline
-description: Revisa código contra una línea base de seguridad OWASP (control de acceso/IDOR, inyección, secretos, input externo) y propone el fix, antes de dar algo por terminado. Úsala al tocar autenticación, endpoints con id de recurso, manejo de input externo, o cuando el usuario pida "revisar seguridad", "OWASP" o "vulnerabilidades".
+description: Revisa código contra una línea base de seguridad OWASP —control de acceso/IDOR, inyección (SQL/comandos/prompt), secretos e input externo— y propone el fix concreto antes de dar algo por terminado. Úsala al construir o tocar login/autenticación, un panel o endpoint con control de acceso por rol, rutas con id de recurso (p.ej. /users/:id), formularios o cualquier input externo, o cuando el usuario pida "revisar seguridad", "asegurar", "OWASP" o "vulnerabilidades".
 ---
 
 # Security baseline (OWASP en cristiano)

@@ -1,6 +1,6 @@
 ---
 name: especificar
-description: Convierte un requerimiento en una especificación verificable y la persiste en docs/spec/. Úsala al iniciar un proyecto o una funcionalidad, cuando el alcance o los criterios de aceptación no estén claros, o cuando el usuario pida "especificar", "definir alcance", "escribir requisitos" o "criterios de aceptación".
+description: Convierte un requerimiento vago en una especificación verificable (alcance, casos con criterios de aceptación, NFR) y la persiste en docs/spec/. Úsala al iniciar un proyecto o una funcionalidad nueva, antes de diseñar o codear, cuando el alcance o los criterios de aceptación no estén claros, o cuando el usuario pida "especificar", "definir alcance", "escribir requisitos" o "criterios de aceptación".
 ---
 
 # Especificar

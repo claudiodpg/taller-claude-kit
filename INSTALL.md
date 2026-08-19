@@ -43,7 +43,7 @@ CLAUDE.md   docs/spec/…   memory/MEMORY.md   ESTADO.md
 
 `/verificar` y el hook llaman a las compuertas de calidad de tu proyecto. Ajusta el comando en:
 - `.claude/commands/verificar.md` (qué corre)
-- `.claude/hooks/no-cerrar-sin-pruebas.sh` (qué valida al cerrar)
+- `.claude/hooks/no-cerrar-sin-pruebas.mjs` (qué valida al cerrar; corre con Node en Windows y Mac)
 
 Por defecto asumen `npm run verify` (typecheck + lint + test). Cámbialo por el de tu lenguaje
 (p.ej. `pytest`, `go test ./...`, `dotnet test`).

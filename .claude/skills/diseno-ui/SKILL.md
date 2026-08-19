@@ -1,6 +1,6 @@
 ---
 name: diseno-ui
-description: Dirige el diseño de interfaces con criterio para que no parezcan salida genérica de IA. Úsala al diseñar o construir una pantalla, componente o layout, o cuando el usuario pida "diseñar UI", "mejorar la interfaz", "que no se vea genérico", "design tokens" o "accesibilidad".
+description: Dirige el diseño de interfaces con criterio para que no parezca salida genérica de IA (referencias, design tokens, anti-slop, accesibilidad). Úsala al diseñar, construir o mejorar una pantalla, vista, componente, formulario, dashboard o layout, o cuando el usuario pida "diseñar la UI", "mejorar la interfaz", "que no se vea genérico", "design tokens" o "accesibilidad/contraste".
 ---
 
 # Diseño UI dirigido
