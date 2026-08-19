@@ -17,9 +17,10 @@ mayor: solo trae las piezas que se usan en el taller. Cópialo a tu repo, úsalo
 | `security-baseline` | skill | Revisa OWASP básico (permiso/IDOR, inyección, secretos) |
 | `/verificar` | command | Corre build → tipos → lint → tests y te da evidencia |
 | `/optimizar-memoria` | command | Poda/fusiona `CLAUDE.md` y `memory/` |
-| `/sistema-diseno` | command | Le pasas una URL → extraes tokens ricos (escalas, pesos, escala tipográfica, espaciado, sombras) y los **pares de contraste reales** (fg/bg del sitio); un **script determinista** genera `tokens.css` + `brandbook.html` con tipografías **embebidas en base64** (autocontenido, offline) y contraste WCAG **del uso real** ("pares que fallan AA: N", no falso positivo), marca **propuesto vs observado**, **auto-versionado** en `design/<slug>/vN/` (rápido, pocos tokens) |
+| `/sistema-diseno` | command | Le pasas una URL → extraes tokens ricos (escalas, pesos, escala tipográfica, espaciado, sombras, **usos reales**) y los **pares de contraste reales** (fg/bg del sitio); un **script determinista** genera `tokens.css` + `brandbook.html` con tipografías **embebidas en base64, subset latino** (autocontenido, offline, <250 KB) y contraste WCAG **del uso real** con ratio **crudo** ("pares que fallan AA: N" + **alternativa accesible calculada** por par), marca **propuesto vs observado**, dibuja **usos** (barra/hero/card/footer) y **prosa con criterio** (todo texto plano, escapado), **auto-versionado** en `design/<slug>/vN/` y HTML **byte a byte reproducible**; mide la **duración total** desde el envío del comando (`--fin`) |
 | `revisor` | subagente | Audita en contexto fresco (Builder ≠ Auditor) |
 | `no-cerrar-sin-pruebas` | hook (Stop) | Bloquea cerrar si las pruebas no pasan |
+| `sd-sello` | hook (UserPromptSubmit) | Sella el envío de `/sistema-diseno` para medir su duración total |
 
 Memoria permanente cableada (se llena por proyecto): `CLAUDE.md`, `docs/spec/00–03`,
 `memory/MEMORY.md`, `ESTADO.md` (estado + handoff).

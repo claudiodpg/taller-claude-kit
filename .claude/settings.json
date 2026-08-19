@@ -1,5 +1,5 @@
 {
-  "$comment": "Hook 'no-cerrar-sin-pruebas': al intentar cerrar (Stop), corre las pruebas; si fallan, bloquea. Usa Node (invariante de plataforma: corre igual en Windows con cmd/PowerShell y en Mac/Linux). El formato de hooks puede variar entre versiones de Claude Code — ver ../CLAUDE-TECH-ACCURACY.md y ajusta si es necesario.",
+  "$comment": "Hooks del kit. 'Stop' (no-cerrar-sin-pruebas): al intentar cerrar, corre las pruebas y bloquea si fallan. 'UserPromptSubmit' (sd-sello): al enviar un prompt con /sistema-diseno, sella el instante del envío en .claude/.cache/sd-run.json para medir la duración total desde el envío del comando. Ambos usan Node (invariante de plataforma: igual en Windows y en Mac/Linux). El formato de hooks puede variar entre versiones de Claude Code — ver ../CLAUDE-TECH-ACCURACY.md y ajusta si es necesario.",
   "hooks": {
     "Stop": [
       {
@@ -7,6 +7,16 @@
           {
             "type": "command",
             "command": "node .claude/hooks/no-cerrar-sin-pruebas.mjs"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/sd-sello.mjs"
           }
         ]
       }
