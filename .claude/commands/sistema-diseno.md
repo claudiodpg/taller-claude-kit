@@ -2,28 +2,46 @@
 description: Extrae el sistema de diseño de un sitio web (le pasas una URL) y produce tokens reutilizables + un brandbook en HTML. Úsalo cuando quieras basar tu diseño en una referencia real.
 ---
 
-Extrae el sistema de diseño del sitio indicado: $ARGUMENTS
+Extrae el sistema de diseño del sitio: $ARGUMENTS
+
+Tú haces **solo la parte que requiere criterio** (mirar el sitio y decidir los tokens). Todo lo
+mecánico —calcular contraste, escribir el CSS, generar el brandbook HTML— lo hace un **script
+determinista**, para gastar pocos tokens y entregar en segundos, no en minutos.
 
 ## Pasos
 
-1. **Inspecciona el sitio.** Abre la URL con el navegador/DevTools disponible (o, si no puedes
-   navegar, pídeme una captura o el HTML). Identifica y anota:
-   - **Colores**: primario, acentos y neutros, con su hex.
-   - **Tipografía**: familias de títulos y de cuerpo, y sus pesos.
-   - **Espaciados y radios**: escala de espacios; radio de bordes y de botones.
-   - **Estilo general**: minimal / corporativo / etc.
-2. **Escribe los tokens** en `design/tokens.css` como CSS variables con nombre
-   (`--color-primario`, `--color-acento`, `--font-titulo`, `--font-cuerpo`, `--radio-boton`, …).
-3. **Genera `design/brandbook.html`**: un manual de diseño autocontenido (un solo archivo, sin
-   dependencias externas) que muestre, listo para abrir en el navegador:
-   - la **paleta** (swatches con su hex),
-   - la **tipografía** (muestras de título y cuerpo),
-   - los **botones** y otros componentes base,
-   - la tabla de **tokens**.
-4. **Resume** en 4 líneas el sistema extraído (tipografía · primario · acento · radios).
+1. **Inspecciona el sitio.** Ábrelo con el navegador/DevTools (o, si no puedes navegar, pídeme una
+   captura o el HTML). Identifica: familias tipográficas (título/cuerpo), colores con su **hex**
+   (primario, oscuros, acento, neutros, texto, texto-muted, fondo), y radios (botón, card).
 
-## Reglas
-- No inventes: usa solo lo que se vea en el sitio; marca lo que no puedas determinar.
-- El brandbook debe cumplir **contraste AA**.
-- El resultado (`design/tokens.css` + `design/brandbook.html`) es el **entregable** de la actividad;
-  esos tokens son los que luego le pasas a Claude para diseñar tus pantallas.
+2. **Escribe SOLO `design/tokens.json`** con este esquema exacto (no calcules contraste ni escribas
+   HTML a mano — de eso se encarga el script):
+   ```json
+   {
+     "site": "https://ejemplo.com",
+     "fonts": { "titulo": "Raleway", "cuerpo": "Raleway" },
+     "colors": {
+       "primario": "#14A797", "primario-oscuro": "#118C7F", "acento": "#E85829",
+       "texto": "#111111", "texto-muted": "#555555", "fondo": "#FFFFFF"
+     },
+     "radii": { "boton": "40px", "card": "8px" }
+   }
+   ```
+   Usa solo lo que veas en el sitio; omite lo que no puedas determinar. No inventes.
+
+3. **Corre el script determinista** (escribe tokens.css + brandbook.html y mide contraste AA):
+   ```bash
+   node .claude/scripts/sistema-diseno.mjs design/tokens.json
+   ```
+
+4. **Cierra reportando** las rutas exactas que imprimió el script (`design/tokens.css` y
+   `design/brandbook.html`) y cómo abrirlo: `open design/brandbook.html`. Menciona en una línea
+   tipografía · primario · acento · si algún color falla AA.
+
+## Reglas de entrega (importante)
+- **Completa TODO en una sola pasada. No te detengas a preguntar "¿lo termino?"**: el entregable son
+  los DOS archivos, y el script los escribe siempre. No pares tras `tokens.json`.
+- **Cierra SIEMPRE diciendo dónde quedaron los archivos** y cómo abrir el brandbook. No esperes a que
+  el usuario pregunte por los entregables.
+- No calcules contraste ni redactes el HTML tú mismo: eso lo hace el script (determinista, sin tokens).
+- Si `node` no está disponible, dilo y ofrece el equivalente; no reimplementes el script a mano.
