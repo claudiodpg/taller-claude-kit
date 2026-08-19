@@ -29,8 +29,13 @@ CLAUDE.md   docs/spec/…   memory/MEMORY.md   ESTADO.md
 
 ## 2. Activar
 
-- **Skills:** se auto-invocan por su descripción. Reinicia Claude Code para que las detecte.
-- **Commands:** se llaman por su nombre: `/verificar`, `/optimizar-memoria`.
+> **Reinicia Claude Code después de copiar.** Los commands y las skills se cargan al **iniciar**
+> la sesión. Si escribes `/` y **no aparece `/sistema-diseno`** (o una skill no se activa), casi
+> siempre es esto: cierra y vuelve a abrir Claude Code. Y asegúrate de abrirlo **en la carpeta
+> donde copiaste `.claude/`** (no en otra). El comando se escribe sin tilde ni ñ: `/sistema-diseno`.
+
+- **Commands:** se escriben con `/`: `/sistema-diseno`, `/verificar`, `/optimizar-memoria`.
+- **Skills:** se auto-invocan por su descripción (sin `/`): `especificar`, `arquitectura`, `diseno-ui`, `security-baseline`.
 - **Subagente `revisor`:** se despacha cuando pides una auditoría independiente.
 - **Hook `no-cerrar-sin-pruebas`:** ya está cableado en `.claude/settings.json`. Requiere que tu
   proyecto tenga un script de pruebas (ver más abajo).
