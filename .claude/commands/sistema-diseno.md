@@ -27,7 +27,7 @@ mecánico —calcular contraste, escribir el CSS, generar el brandbook HTML, ver
    - **Pares de contraste REALES (crítico):** las combinaciones **texto sobre fondo** que el sitio de
      verdad usa — texto del botón primario sobre su fondo, texto del menú sobre su barra, un color de
      marca usado **como texto** sobre el fondo, etc. Anota `fg` (texto) y `bg` (fondo) de cada una.
-     Sin esto el contraste medido es una ilusión: **no hay verde sin evidencia**.
+     Sin esto el contraste medido es una ilusión: **no hay aprobado sin evidencia**.
    - **Escala tipográfica:** tamaños de h1, h2, h3, cuerpo, small, caption (con line-height y peso).
    - **Radios** (botón, card) y su **escala** (sm/md/lg/full).
    - **Espaciado** (la retícula: 4/8/12/16/24/32…), **sombras**, **gradientes**, y una **nota del logo**.
@@ -114,7 +114,7 @@ mecánico —calcular contraste, escribir el CSS, generar el brandbook HTML, ver
   espaciado, sombras, gradientes y **los pares de contraste reales** cuando existan. Un brandbook rico
   nace de un `tokens.json` rico.
 - **Contraste con evidencia real.** Captura `pairs` (texto/fondo que el sitio usa). El titular es
-  "Pares que fallan AA: N", no el "0 fallan" del mejor-texto-posible. No hay verde sin evidencia.
+  "Pares que fallan AA: N", no el "0 fallan" del mejor-texto-posible. No hay aprobado sin evidencia.
 - **Marca propuesto vs observado** (`propuesto`) para lo que sugieras tú y no viste en el sitio.
 - **Cierra SIEMPRE diciendo dónde quedaron los archivos** (versión nueva + latest) y cómo abrir el
   brandbook. No esperes a que el usuario pregunte por los entregables.

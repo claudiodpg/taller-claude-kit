@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Hook Stop cross-platform (Windows + macOS + Linux): no dejar cerrar si las pruebas no pasan.
-// Candado contra el "falso verde". Corre con Node, que se comporta igual en cmd/PowerShell y en bash.
+// Candado contra el "falso positivo". Corre con Node, que se comporta igual en cmd/PowerShell y en bash.
 // Cablea aquí el comando de verificación de TU proyecto. Por defecto: npm run verify.
 // Ajusta AEOS_VERIFY_CMD a tu stack (pytest / go test ./... / dotnet test, etc.).
 import { execSync } from "node:child_process";
@@ -29,7 +29,7 @@ try {
     /* si no se puede escribir el log, igual bloqueamos */
   }
   // Salida bloqueante para el evento Stop: se reporta el motivo y no se cierra.
-  const reason = `No hay verde sin evidencia: las pruebas no pasan. Corre /verificar, revisa ${OUT} y corrige antes de cerrar.`;
+  const reason = `No hay aprobado sin evidencia: las pruebas no pasan. Corre /verificar, revisa ${OUT} y corrige antes de cerrar.`;
   process.stdout.write(JSON.stringify({ decision: "block", reason }));
   process.exit(0);
 }

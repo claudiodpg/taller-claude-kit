@@ -17,5 +17,5 @@ archivo.
 Reglas:
 - No cambies asserts ni tests para que "pasen". Un test que falla es información, repórtalo tal cual.
 - Si algo falla, resume qué falló y dónde; no lo escondas.
-- Termina con un veredicto claro: **VERDE con evidencia** (todo pasó, con la salida) o **hay fallos**
-  (lista). "No hay verde sin evidencia."
+- Termina con un veredicto claro: **APROBADO con evidencia** (todo pasó, con la salida) o **hay fallos**
+  (lista). "No hay aprobado sin evidencia."
